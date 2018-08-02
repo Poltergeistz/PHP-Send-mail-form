@@ -74,10 +74,10 @@
 <!-- Form end -->
 </div>
 <?php 
-/* $email = $_POST['email'];
+$email = $_POST['email'];
 $object = $_POST['object'];
 $message = $_POST['message'];
-mail($email,$object,$message); */
+mail($email,$object,$message);
 ?>
 <?php
 // $email 
