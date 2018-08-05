@@ -73,22 +73,39 @@
 </form>
 <!-- Form end -->
 </div>
+
 <?php 
-$email = $_POST['email'];
-$object = $_POST['object'];
-$message = $_POST['message'];
+// Check for empty fields
+if(empty($_POST['email'])     ||
+   empty($_POST['message'])   ||
+   empty($_POST['object'])    ||
+   !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
+   {
+   echo "No arguments Provided!";
+   }
+
+// Variables to catch information from the email form
+$email = strip_tags($_POST['email']);
+$object = strip_tags($_POST['object']);
+$message = strip_tags($_POST['message']);
 mail($email,$object,$message);
-?>
-<?php
-// $email 
+
+
+/* // $email 
 function validateEmail($email) {
 
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    // invalid emailaddress
-    echo "Adresse email incorrecte !";
+    throw new Exception("Adresse email incorrecte !");
 }
 echo "Message envoyé";
+
+try {
+
 }
+catch (Exception $e) {
+  echo "Tout va bien";
+}
+} */
 ?>
 
 <script
