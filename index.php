@@ -76,6 +76,7 @@
 
 <?php 
 // Check for empty fields
+function checkEmpty(){
 if(empty($_POST['email'])     ||
    empty($_POST['message'])   ||
    empty($_POST['object'])    ||
@@ -83,7 +84,8 @@ if(empty($_POST['email'])     ||
    {
    echo "No arguments Provided!";
    }
-
+  }
+  echo checkEmpty();
 // Variables to catch information from the email form
 $email = strip_tags($_POST['email']);
 $object = strip_tags($_POST['object']);

@@ -1,4 +1,10 @@
 {
+    "name":"mail",
+    "description": "Send mail",
+    "scripts": {
+        "test" : "./vendor/bin/phpunit ./tests.php",
+        "start" : "php -S localhost:8000 -t public"
+    },
     "require": {
         "php": "^7.0.30"
     },
